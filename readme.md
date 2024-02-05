@@ -1,4 +1,4 @@
-[# Game-Server-API](https://www.gametracker.ro)
+# [Game-Server-API](https://www.gametracker.ro)
 
 Check your game server in web-browser without entering or installing the game.
 
