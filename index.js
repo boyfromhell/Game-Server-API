@@ -6,6 +6,10 @@ const app = express();
 
 const port = config.port;
 
+const fs = require('fs');
+
+const {marked} = require('marked');
+
 app.get("/", (req, res) => {
     const game = req.query.game;
     const ip = req.query.ip;
