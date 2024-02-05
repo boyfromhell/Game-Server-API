@@ -10,7 +10,13 @@ const fs = require('fs');
 
 const {marked} = require('marked');
 
-app.get("/", (req, res) => {
+app.get('/', function (req, res) {
+    var readme = './README.md';
+    var output = fs.readFileSync(readme, 'utf8');
+    res.send(marked(output.toString()));
+});
+
+app.get("/info", (req, res) => {
     const game = req.query.game;
     const ip = req.query.ip;
     const port = req.query.port;
