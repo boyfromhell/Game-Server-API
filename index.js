@@ -11,9 +11,9 @@ const fs = require('fs');
 const {marked} = require('marked');
 
 app.get('/info', function (req, res) {
-    var readme = './../readme.md';
-    var output = fs.readFileSync(readme, 'utf8');
-    res.send(marked(output.toString()));
+    res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  res.end(`Hello! Go to item: <a href="https://www.gametracker.ro">gametracker</a>`);
 });
 
 app.get("/", (req, res) => {
