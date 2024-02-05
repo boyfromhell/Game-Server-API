@@ -11,7 +11,7 @@ const fs = require('fs');
 const {marked} = require('marked');
 
 app.get('/info', function (req, res) {
-    var readme = './readme.md';
+    var readme = './../readme.md';
     var output = fs.readFileSync(readme, 'utf8');
     res.send(marked(output.toString()));
 });
